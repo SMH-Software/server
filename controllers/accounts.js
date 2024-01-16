@@ -8,7 +8,6 @@ exports.getAccounts = async (req, res) => {
         let getAccounts 
 
         if(req.query._limit){
-            console.log(req.query._limit)
             getAccounts = await Account.find().limit(req.query._limit).sort({createdAt: -1})
         }else{
             getAccounts = await Account.find().sort({createdAt: -1})
